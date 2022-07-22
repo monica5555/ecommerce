@@ -1,0 +1,659 @@
+:root {
+    --pink: #43e896;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #FFFAF0;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgb(203, 230, 243);
+    font-style: oblique;
+    font-weight: lighter;
+}
+
+.heading span {
+    color: #FFFAF0;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: rgba(206, 81, 81, 0.473);
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background: lightsalmon;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size: 2rem;
+    color: rgb(126, 133, 134);
+    font-weight: lighter;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+header .logo span {
+    color: lightskyblue;
+
+}
+
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: rgba(70, 67, 71, 0.596);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+header .navbar a:hover {
+    color: var(--grey);
+    border-bottom: 1px solid rgba(15, 15, 15, 0.911);
+
+
+
+}
+
+
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+
+
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px rgba(153, 149, 149, 0.404);
+
+
+
+
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+
+
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 10px;
+    text-decoration: none;
+
+
+
+}
+
+.dropdown-content a:hover {
+    color: #fff;
+    background-color: rgba(187, 223, 236, 0.897);
+
+
+
+
+}
+
+
+/* media queries  */
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .home {
+        background-position: left;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    header .fa-bars {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, .1);
+        display: block;
+    }
+
+    .home .content h3 {
+        font-size: 5rem;
+    }
+
+    .home .content span {
+        font-size: 2.5rem;
+    }
+
+    .icons-container .icons h3 {
+        font-size: 2rem;
+    }
+
+    .icons-container .icons span {
+        font-size: 1.7rem;
+    }
+
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+
+#lblCartCount {
+    font-size: 12px;
+    background: #3199ac;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+
+.imgbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+
+
+header .icons a {
+    font-size: 2.5rem;
+    color: #333;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+    color: lightskyblue;
+
+}
+
+header #toggler {
+    display: none;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/chocolate4.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.home .content {
+    max-width: 50rem;
+}
+
+.home .content h3 {
+    font-size: 5rem;
+    color: rgb(130, 190, 219);
+    font-style: oblique;
+
+
+}
+
+.home .content span {
+    font-size: 3.5rem;
+    color: rgba(12, 10, 10, 0.945);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.home .content p {
+    font-size: 2rem;
+    color: rgb(37, 145, 172);
+    padding: 1rem 0;
+    line-height: 1.5;
+    font-style: oblique;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.about .row .video-container {
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+.about .row .video-container video {
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.about .row .video-container h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background: rgb(36, 38, 41);
+    width: 60%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+
+.about .row .content {
+    flex: 1 1 40rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: rgb(139, 139, 148);
+    font-family: initial;
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+
+
+
+.wrapper {
+
+    margin: 20px;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+
+    height: 420px;
+    width: 900px;
+
+    display: inline-block;
+
+
+
+}
+
+
+.product-img {
+    float: left;
+    height: 420px;
+    width: 327px;
+}
+
+.product-img img {
+    border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+    float: left;
+    height: 420px;
+    width: 327px;
+    border-radius: 0 7px 10px 7px;
+    background-color: #ffffff;
+}
+
+.product-text {
+    height: 300px;
+    width: 327px;
+}
+
+.product-text h1 {
+    margin: 0 0 0 38px;
+    padding-top: 52px;
+    font-size: 34px;
+    color: #706363;
+}
+
+.product-text h1,
+.product-price-btn p {
+    font-family: 'Bentham', serif;
+}
+
+.product-text h2 {
+    margin: 0 0 47px 38px;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 0.2em;
+}
+
+.product-text p {
+    height: 125px;
+    margin: 0 0 0 38px;
+    font-family: 'Playfair Display', serif;
+    color: #8d8d8d;
+    line-height: 1.7em;
+    font-size: 15px;
+    font-weight: lighter;
+    overflow: hidden;
+}
+
+.product-price-btn {
+    height: 103px;
+    width: 327px;
+    margin-top: 17px;
+    position: relative;
+}
+
+.product-price-btn p {
+    display: inline-block;
+    position: absolute;
+    top: -13px;
+    height: 50px;
+    font-family: 'Trocchi', serif;
+    margin: 0 0 0 38px;
+    font-size: 28px;
+    font-weight: lighter;
+    color: #474747;
+}
+
+.p {
+    display: inline-block;
+    height: 50px;
+    font-family: 'Suranna', serif;
+    font-size: 34px;
+}
+
+.product-price-btn button {
+    float: right;
+
+    height: 50px;
+    width: 176px;
+    margin: 0 40px 0 16px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 60px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    background-color: #4b504e;
+    cursor: pointer;
+    outline: none;
+}
+
+.product-price-btn button:hover {
+    background-color: #e2cc9d;
+}
+
+
+.review .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review .box-container .box {
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    padding: 3rem 2rem;
+    position: relative;
+    border: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.review .box-container .box .fa-quote-right {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 6rem;
+    color: #eee;
+}
+
+.review .box-container .box .stars i {
+    color: rgba(206, 190, 157, 0.815);
+    font-size: 2rem;
+}
+
+.review .box-container .box p {
+    color: #999;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.review .box-container .box .user h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.review .box-container .box .user span {
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+    align-items: center;
+
+
+}
+
+.contact .row form {
+    flex: 1 1 40rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border: .1rem solid rgba(0, 0, 0, .1);
+    background: #fff;
+    border-radius: .5rem;
+
+
+}
+
+.contact .row .image {
+    flex: 10em;
+
+
+
+}
+
+.contact .row .image img {
+    width: 100%;
+
+}
+
+.contact .row form .box {
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    margin: .7rem 0;
+    width: 100%;
+
+}
+
+.contact .row form .box:focus {
+    border-color: var(--pink);
+}
+
+.contact .row form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer .box-container .box {
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3 {
+    color: rgb(191, 225, 230);
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.footer .box-container .box a {
+    display: block;
+    color: rgb(105, 95, 95);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+.footer .box-container .box a:hover {
+    color: rgba(165, 77, 77, 0.74);
+    text-decoration: underline;
+}
+
+
+
+.footer .company {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    padding-bottom: 9rem;
+}
+
+.footer .company span {
+    color: rgba(250, 128, 114, 0.548);
+    font-weight: bold;
+}
